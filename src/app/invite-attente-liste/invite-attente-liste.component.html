@@ -1,0 +1,14 @@
+<div *ngIf="hasInvitation$">
+    <div class="title">
+        <h3>Vous êtes invité par de nouveaux contacts</h3>
+    </div>
+    <app-invit-attente *ngFor="let singleContact of contactList$ | async"[contactList]="singleContact"></app-invit-attente>
+</div>
+<div *ngIf="!hasInvitation$">
+    <div class="title">
+        <h3>Vous n'avez pas d'invitation en attente</h3>
+    </div>
+</div>
+
+<!-- <p>invite-attente-liste DATA EN DUR works!</p>
+<app-invit-attente *ngFor="let singleContact of contactList"[contactList]="singleContact"></app-invit-attente> -->

@@ -1,0 +1,29 @@
+.wall-post-card {
+    background-color: var(--backgroundCard);
+    box-shadow: 4px 4px 20px var(--cardShadow) ;
+    border-radius: 10px;
+    img {
+        width: 100%;
+    }
+    margin: 20px auto;
+    padding: 16px 30px;
+    width: 55%;
+}
+
+h2 {
+    margin-bottom: 0;
+    margin-left: 26px;
+}
+
+.liked {
+    background-color: rgba(234, 252, 253, 05);
+    color: rgb(12, 69, 69);
+    button {
+        background-color:lightsteelblue;
+        box-shadow: 4px 4px 20px var(--likedCardshadow);
+        color:rgb(20, 54, 109);
+        &:active {
+            box-shadow: 0 0 5px var(--likedCardshadow);
+        }
+    }
+}

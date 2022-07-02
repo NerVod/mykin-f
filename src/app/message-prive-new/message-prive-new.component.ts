@@ -5,53 +5,53 @@ import { map, Observable } from 'rxjs';
 import { MessagePrive } from '../models/message-prive.model';
 import { MessagePriveService } from '../services/message-prives.service';
 
-
 @Component({
   selector: 'app-message-prive-new',
   templateUrl: './message-prive-new.component.html',
-  styleUrls: ['./message-prive-new.component.scss']
+  styleUrls: ['./message-prive-new.component.scss'],
 })
 export class MessagePriveNewComponent implements OnInit {
-
   friendPrenom!: string;
-  friendName!: string
+  friendName!: string;
 
   messagePriveForm!: FormGroup;
-  messagePrivePreview$!: Observable<MessagePrive>
+  messagePrivePreview$!: Observable<MessagePrive>;
 
-  constructor(private formBuilder: FormBuilder, private messagePriveService: MessagePriveService, private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private messagePriveService: MessagePriveService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.messagePriveForm = this.formBuilder.group({
-      title: [null, Validators.required],
-      message: [null, Validators.required]
-    }, 
-    {
-      updateOn: 'blur'
-    });
+    this.messagePriveForm = this.formBuilder.group(
+      {
+        title: [null, Validators.required],
+        message: [null, Validators.required],
+      },
+      {
+        updateOn: 'blur',
+      }
+    );
     this.messagePrivePreview$ = this.messagePriveForm.valueChanges.pipe(
-      map(formvalue => ({
+      map((formvalue) => ({
         ...formvalue,
-        createdAt: new Date()
+        createdAt: new Date(),
       }))
-    )
-    
+    );
 
-    console.log("destinataire ami mail : ", localStorage['ami'])
-    console.log("PrenomAmi : ", localStorage['PrenomAmi'])
+    console.log('destinataire ami mail : ', localStorage['ami']);
+    console.log('PrenomAmi : ', localStorage['PrenomAmi']);
 
     this.friendPrenom = localStorage['PrenomAmi'];
-    this.friendName = localStorage['NameAmi']
-
-
+    this.friendName = localStorage['NameAmi'];
   }
-
-
 
   onSubmitForm(): void {
-    console.log(this.messagePriveForm.value)
-    this.messagePriveService.addMessage(this.messagePriveForm.value).subscribe();
-    this.router.navigateByUrl('/contact')
+    console.log(this.messagePriveForm.value);
+    this.messagePriveService
+      .addMessage(this.messagePriveForm.value)
+      .subscribe();
+    this.router.navigateByUrl('/contact');
   }
-
 }

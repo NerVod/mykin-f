@@ -23,7 +23,6 @@ export class InvitAttenteComponent implements OnInit {
 
   ngOnInit(): void {
     this.buttonText = 'Accepter';
-    // this.invited = this.contactList.invited;
     this.photoProfile = this.contactList.photoProfile;
     this.user = this.contactList.email;
     this.contactService.getPhotoProfile(`${this.user}`);

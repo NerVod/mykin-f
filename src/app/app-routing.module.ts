@@ -13,23 +13,41 @@ import { MessagePriveNewComponent } from './message-prive-new/message-prive-new.
 import { PagePostComponent } from './page-post/page-post.component';
 
 const routes: Routes = [
-  {path: "", pathMatch: "full", redirectTo: "login"},
-  {path:"home", canActivate: [ AuthGuard ], component: HomeComponent },
-  {path: "register", component: RegisterComponent},
-  {path: "login", component: LogInComponent},
-  {path: "contact", canActivate: [ AuthGuard ], component: ContactComponent},
-  {path: "createpost", canActivate: [ AuthGuard ], component: WallPostNewComponent},
-  {path: "wallpostfriend/:param", canActivate: [ AuthGuard ], component: WallPostFriendComponent},
-  {path: "message", canActivate: [ AuthGuard ], component: MessagePriveListComponent},
-  {path: "message/:param", canActivate: [ AuthGuard ], component: MessagePriveListComponent},
-  {path: "createmessage", canActivate: [ AuthGuard ], component: MessagePriveNewComponent},
-  {path: "posts", canActivate: [ AuthGuard ], component: PagePostComponent},
-
-  
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'home', canActivate: [AuthGuard], component: HomeComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LogInComponent },
+  { path: 'contact', canActivate: [AuthGuard], component: ContactComponent },
+  {
+    path: 'createpost',
+    canActivate: [AuthGuard],
+    component: WallPostNewComponent,
+  },
+  {
+    path: 'wallpostfriend/:param',
+    canActivate: [AuthGuard],
+    component: WallPostFriendComponent,
+  },
+  {
+    path: 'message',
+    canActivate: [AuthGuard],
+    component: MessagePriveListComponent,
+  },
+  {
+    path: 'message/:param',
+    canActivate: [AuthGuard],
+    component: MessagePriveListComponent,
+  },
+  {
+    path: 'createmessage',
+    canActivate: [AuthGuard],
+    component: MessagePriveNewComponent,
+  },
+  { path: 'posts', canActivate: [AuthGuard], component: PagePostComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

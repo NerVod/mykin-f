@@ -17,7 +17,7 @@ hasMessages$! : any;
   constructor(private messagePriveService: MessagePriveService) { }
 
   ngOnInit(): void {
-    this.messagePrives = this.messagePriveService.getAllMessagesPrivesHard();
+    // this.messagePrives = this.messagePriveService.getAllMessagesPrivesHard();
     this.messagePrives$ = this.messagePriveService.getUserMessagesPrives();
     this.messagePriveService.hasMessages(localStorage['user']).subscribe((data: Object) => this.hasMessages$= (Object.entries(data)[0][1])) 
   }

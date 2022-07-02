@@ -4,16 +4,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav-liste',
   templateUrl: './nav-liste.component.html',
-  styleUrls: ['./nav-liste.component.scss']
+  styleUrls: ['./nav-liste.component.scss'],
 })
 export class NavListeComponent implements OnInit {
+  survol!: boolean;
 
-  survol!: boolean
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   logout() {
     localStorage.removeItem('Token');
@@ -24,7 +22,6 @@ export class NavListeComponent implements OnInit {
     localStorage.removeItem('PrenomAmi');
     localStorage.removeItem('NameAmi');
 
-    this.router.navigateByUrl('/login')
+    this.router.navigateByUrl('/login');
   }
-
 }

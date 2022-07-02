@@ -1,4 +1,4 @@
 export const environment = {
-  baseURL: "https://git.heroku.com/mykins-b.git",
+  baseURL: "https://mykins-b.herokuapp.com/",
   production: true
 };

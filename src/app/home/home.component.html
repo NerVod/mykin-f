@@ -39,17 +39,48 @@
               <!-- <li> Nom d'utilisateur : {{ _User$ | async}}</li> -->
               <li>
                 <p>Prénom: {{ _Prenom$ | async }}</p>
+                <form (ngSubmit)="onSubmitPrenom()">
+                  <label class="modifierInfo" for="prenomLoader">Modifiez le Prénom</label>
+                  <input
+                    type="text"
+                    id="prenomLoader"
+                    [(ngModel)]="prenomUser"
+                    name="userPrenom"
+                  />
+                  <button type="submit">Charger le prénom</button>
+                </form>
               </li>
               <li>
                 <p>Nom : {{ _Nom$ | async }}</p>
+                <form (ngSubmit)="onSubmitNom()">
+                  <label class="modifierInfo" for="nameLoader">Modifiez le Nom</label>
+                  <input
+                    type="text"
+                    id="nameLoader"
+                    [(ngModel)]="nomUser"
+                    name="userNom"
+                  />
+                  <button type="submit">Charger le nom</button>
+                </form>
               </li>
               <li>
                 <p>Email du compte : {{ _Email$ | async }}</p>
+                <form (ngSubmit)="onSubmitmail()">
+                  <label class="modifierInfo" for="mailLoader">Modifiez le mail de contact</label>
+                  <input
+                    type="email"
+                    id="mailLoader"
+                    [(ngModel)]="emailUser"
+                    name="userNom"
+                  />
+                  <button type="submit">changer l'email</button>
+                </form>
+                
               </li>
 
               <li>
                 <div class="photoLoader">
-                  <h3>Modifier ma photo</h3>
+                  <h3 class="titlePhoto">Modifier ma photo</h3>
                   <form (ngSubmit)="onSubmitPhoto()">
                     <label class="label" for="photoLoader"
                       >Insérez l'URL de votre Avatar

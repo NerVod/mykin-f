@@ -43,5 +43,17 @@ export class UserService {
     return this.http.post(`${environment.baseURL}user/deleteaccount`, donnees)
   }
 
+  updatePrenom(donnees: any) {
+    console.log('donnees ??', donnees)
+    return this.http.post(`${environment.baseURL}user/updateprenom`, donnees).subscribe()
+  }
+  updateNom(donnees: any) {
+    return this.http.post(`${environment.baseURL}user/updatenom`, donnees).subscribe()
+  }
+
+  updateEmail(donnees: any) {
+    return this.http.post(`${environment.baseURL}user/updatemail`, donnees).subscribe()
+  }
+
 
 }

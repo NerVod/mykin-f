@@ -25,6 +25,9 @@ export class HomeComponent implements OnInit {
   survol!: boolean;
   photoUrl!: string;
   nombreInscrits$!: any;
+  prenomUser!:string;
+  nomUser!: string;
+  emailUser!:string;
 
   getProtectedData() {
     this.userService
@@ -56,11 +59,39 @@ export class HomeComponent implements OnInit {
       user: localStorage['user'],
     };
     this.userService.updateUserPhoto(donnees);
+    this.logout()
+  }
+  onSubmitPrenom(): void {
+    console.log(this.prenomUser)
+    const donnees = {
+      prenom: this.prenomUser,
+      user: localStorage['user'],
+    };
+    this.userService.updatePrenom(donnees)
+    this.logout()
+  }
+  onSubmitNom(): void {
+    console.log(this.nomUser)
+    const donnees = {
+      nom: this.nomUser,
+      user: localStorage['user'],
+    };
+    this.userService.updateNom(donnees)
+    this.logout()
+  }
+  onSubmitmail() {
+    console.log(this.emailUser)
+    const donnees = {
+      email: this.emailUser,
+      user: localStorage['user'],
+    }
+    this.userService.updateEmail(donnees)
+    this.logout()
   }
 
   getName() {
     this._Nom$ = this.userService.getUserData().pipe(
-      tap((value) => console.log('value getName', value)),
+      // tap((value) => console.log('value getName', value)),
       map((value) => (value = Object.entries(value))),
       tap((value) => localStorage.setItem('name', value[0][1]['name'])),
       map((value) => (value = value[0][1]['name']))

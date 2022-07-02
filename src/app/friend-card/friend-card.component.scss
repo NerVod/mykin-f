@@ -81,10 +81,34 @@ justify-content: space-between;
 @media (max-width: 630.33px) {
     .contact-card {
         width: 250px
+    };
+    .containerPhoto {
+        height : 55px;
+        width: 55px
+    }
+    .photoProfile {
+        height: 45px;
+        width: 45px;
+    }
+
+    .profileName {
+        font-size: 1.1rem;
     }
 }
 @media (max-width: 450.33px) {
     .contact-card {
         width: 200px
+    }
+    .containerPhoto {
+        height : 45px;
+        width: 45px
+    }
+    .photoProfile {
+        height: 40px;
+        width: 40px;
+    }
+
+    .profileName {
+        font-size: 1.1rem;
     }
 }

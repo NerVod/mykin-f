@@ -50,3 +50,14 @@ button {
 .invited {
     background-color: var(--likedCardshadow);
 }
+
+@media (max-width: 630.33px) {
+    .contact-card {
+        width: 250px
+    }
+}
+@media (max-width: 450.33px) {
+    .contact-card {
+        width: 200px
+    }
+}

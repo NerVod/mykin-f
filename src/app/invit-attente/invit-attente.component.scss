@@ -67,6 +67,12 @@ button {
     .profileName {
         font-size: 1.1rem;
     }
+    button{
+        height: 20px;
+        font-size: medium;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
 }
 @media (max-width: 450.33px) {
     .contact-card {
@@ -82,6 +88,12 @@ button {
     }
 
     .profileName {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
+    }
+    button{
+        height: 17px;
+        font-size: small;
+        margin-right: 15px;
+        margin-top: 15px;
     }
 }

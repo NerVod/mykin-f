@@ -68,7 +68,7 @@
 
                 <div class="col-md-6 mt-4">
                     <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary px-5"(click)="registerFormSubmit(registerForm)">Valider</button>
-                <button type="button" class="btn btn-secondary px-3 ms-2">Annuler</button>
+                <button type="button" class="btn btn-secondary px-3 ms-2" (click)="cancel()">Annuler</button>
                 </div>
             </form>
 

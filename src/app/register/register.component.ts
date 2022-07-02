@@ -51,50 +51,17 @@ export class RegisterComponent implements OnInit {
   }
 
   registerFormSubmit(form: FormGroup): void {
-    // let formData: any = this.registerForm.value;
-    // const salt = bcrypt.genSaltSync(10)
-    // formData.password = bcrypt.hashSync(formData.password, salt);
-    // console.log('formvalue APRES chiffrage password',this.registerForm.value)
-    
+
     this.User.createNewUser(this.registerForm.value).subscribe({
       next: (v) => console.log('User ajouté avec succès :', v),
       error: (e) => console.error('error createNewUser :',e),
       complete: () => this.ngZone.run(() => this.router.navigateByUrl('/login'))
     })
 
+  }
 
-   
-    // this.crudService.AddUser(this.registerForm.value)
-    // .subscribe({
-    //   next: (v) => console.log('User ajouté avec succès :', v),
-    //   error: (e) => console.error('error crudservice adduser :',e),
-    //   complete: () => this.ngZone.run(() => this.router.navigateByUrl('/login'))
-    
-    // })
-
-    // console.log('FormData dans registerFormSubmit :',this.registerForm.value);
-    
-  
-
-
-
-
-    /////////////////////////////////////////
-    // traitement envoi serveur
-// this.http.post('http://localhost:3000/register', formData).subscribe(
-//   (res) => console.log(res),
-//   (err) => console.log(err)
-// )
-
-// this.crudService.addUser(this.registerForm.value)
-// .subscribe(() => {
-//   console.log('User ajouté avec succès')
-//   this.ngZone.run(() => this.router.navigateByUrl('/login'))
-// }, (err) => {
-//   console.log(err)
-// })
-
-    //////////////////////////////////////////
+  cancel() {
+    this.router.navigateByUrl('/home')
   }
 
 }

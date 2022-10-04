@@ -1,5 +1,14 @@
 # Mykin
 
+Social Network project Angular _ backend NodeJS
+
+![Coded by NerVod](login.JPG)
+![Coded by NerVod](contact.JPG)
+![Coded by NerVod](createpost.JPG)
+![Coded by NerVod](post.JPG)
+![Coded by NerVod](mobile.JPG)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
 ## Development server
